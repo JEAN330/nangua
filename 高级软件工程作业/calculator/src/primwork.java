@@ -194,7 +194,7 @@ public class primwork {
 				 return 0;
 		 }
 	 }
-	 public static int main(String[] args)
+	 public static void main(String[] args)
 	 {
 		 Scanner input=new Scanner(System.in);
 		 int i,k,p,flag=0;
@@ -258,10 +258,10 @@ public class primwork {
 			}
 		 }
 		 System.out.println("本次共"+p+"题,您答对了"+flag+"题,正确率为"+flag*100/p+"%");
-		 if(k==p)
-			 return 1;
-		 else
-			 return 0;
+		// if(k==p)  //测试随机生成1000个算式时间
+		//	 return 1;
+		 //else
+		//	 return 0;  
 		 
 	 }
 	 
