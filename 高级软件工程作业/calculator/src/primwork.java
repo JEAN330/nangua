@@ -1,8 +1,8 @@
 import java.util.*;
 public class primwork {
 
-	 public static int[] fraction() {    //¶¨ÒåÒ»¸öÕæ·ÖÊı
-		 int x=(int)(Math.random()*10)+1;  //Ëæ»úÉú³É10ÒÔÄÚµÄ²»Îª0µÄ·Ö×Ó·ÖÄ¸
+	 public static int[] fraction() {    //å®šä¹‰ä¸€ä¸ªçœŸåˆ†æ•°
+		 int x=(int)(Math.random()*10)+1;  //éšæœºç”Ÿæˆ10ä»¥å†…çš„ä¸ä¸º0çš„åˆ†å­åˆ†æ¯
 		 int y=(int)(Math.random()*10)+1;  
 		 if(x<=y){
 			 return gcd(x,y);	
@@ -11,13 +11,13 @@ public class primwork {
 			 return gcd(y,x);	
 		 }
 	 }
-	 public static int[] gcd(int x,int y){   //Õ·×ªÏà³ıµÃµ½×î¼ò·ÖÊı
+	 public static int[] gcd(int x,int y){   //è¾—è½¬ç›¸é™¤å¾—åˆ°æœ€ç®€åˆ†æ•°
 		 int temp,x1=x,y1=y;
-		 if(x>=y)         //¼Ù·ÖÊı»¯¼ò
+		 if(x>=y)         //å‡åˆ†æ•°åŒ–ç®€
 		 {
 			 while(x!=y){
 				 temp=y;
-				 if((x-y)<=temp){    //±È½Ï¼õÊıÓë±»¼õÊıµÄ´óĞ¡£¬½«´óµÄÖµ¸³Óèx,Ğ¡µÄÖµ¸³Óèy
+				 if((x-y)<=temp){    //æ¯”è¾ƒå‡æ•°ä¸è¢«å‡æ•°çš„å¤§å°ï¼Œå°†å¤§çš„å€¼èµ‹äºˆx,å°çš„å€¼èµ‹äºˆy
 					 y=x-y;
 					 x=temp;
 				 }
@@ -27,7 +27,7 @@ public class primwork {
 				 }
 			 }
 		 }
-		 else             //Õæ·ÖÊı»¯¼ò
+		 else             //çœŸåˆ†æ•°åŒ–ç®€
 		 {
 			 while(x!=y){
 				 temp=x;
@@ -44,7 +44,7 @@ public class primwork {
 		int[] array={x1/x,y1/y}; 
 		return array;
 	 }
-	 public static int[] cal(int a,int b,int c,int d,int op){ //Õæ·ÖÊıÖ®¼äµÄËÄÔòÔËËã¹æÔò
+	 public static int[] cal(int a,int b,int c,int d,int op){ //çœŸåˆ†æ•°ä¹‹é—´çš„å››åˆ™è¿ç®—è§„åˆ™
 		 int[] arr=new int[2];
 		 switch(op)
 		 {
@@ -57,8 +57,8 @@ public class primwork {
 	 }
 	 public static int[] display(int n,int m,int[] a,int[][] b,int[] op){
 		 int i,j,k,l;
-		 int[] order=new int[20];  //ÎªÕûÊıºÍÕæ·ÖÊıÅÅĞò
-		 for(i=0,j=0,k=0,l=0;k<m+n;)  //Ëæ»úÅÅÁĞÕûÊıºÍÕæ·ÖÊı
+		 int[] order=new int[20];  //ä¸ºæ•´æ•°å’ŒçœŸåˆ†æ•°æ’åº
+		 for(i=0,j=0,k=0,l=0;k<m+n;)  //éšæœºæ’åˆ—æ•´æ•°å’ŒçœŸåˆ†æ•°
 		 {
 			 int x=(int)(Math.random()*2);
 			 if(x==0&&i<n)
@@ -72,7 +72,7 @@ public class primwork {
 					 	case 0:System.out.print("+");break;
 					 	case 1:System.out.print("-");break;
 					 	case 2:System.out.print("*");break;
-					 	case 3:System.out.print("¡Â");break;
+					 	case 3:System.out.print("Ã·");break;
 					 }
 					 l++;
 				 }
@@ -89,7 +89,7 @@ public class primwork {
 					 	case 0:System.out.print("+");break;
 					 	case 1:System.out.print("-");break;
 					 	case 2:System.out.print("*");break;
-					 	case 3:System.out.print("¡Â");break;
+					 	case 3:System.out.print("Ã·");break;
 					 }
 					 l++;
 				 }
@@ -100,13 +100,13 @@ public class primwork {
 				System.out.print("=");
 				return order;
 	 }
-	 public static int[] res(int[] a,int b[][],int[] op,int[] order,int n,int m){ //½«ÖĞ×º±í´ïÊ½×ª»»Îªºó×º±í´ïÊ½
+	 public static int[] res(int[] a,int b[][],int[] op,int[] order,int n,int m){ //å°†ä¸­ç¼€è¡¨è¾¾å¼è½¬æ¢ä¸ºåç¼€è¡¨è¾¾å¼
 		stack<Integer> stack = new arraystack<Integer>();
 		int i=0,j=0,o,k,l;
 		int[] arr=new int[2];
 		int[][] c=new int[30][2];
 		stack.push(op[0]);
-		if(order[0]==0)  //½«ÕûÊıÒÔÕûÊı/1µÄĞÎÊ½´æÈëÊı×é£¬±ãÓÚÖ®ºóµÄ¼ÆËã
+		if(order[0]==0)  //å°†æ•´æ•°ä»¥æ•´æ•°/1çš„å½¢å¼å­˜å…¥æ•°ç»„ï¼Œä¾¿äºä¹‹åçš„è®¡ç®—
 		{
 			c[0][0]=a[i];
 			c[0][1]=1;
@@ -117,7 +117,7 @@ public class primwork {
 			c[0][1]=b[0][1];
 			j++;
 		}
-		for(k=1,l=1,o=1;k<n+m;k++){  //½«ÖĞ×º±í´ïÊ½°´ÕÕÄæ²¨À¼±í´ïµÄË³Ğò´æÈë¶şÎ¬Êı×éc
+		for(k=1,l=1,o=1;k<n+m;k++){  //å°†ä¸­ç¼€è¡¨è¾¾å¼æŒ‰ç…§é€†æ³¢å…°è¡¨è¾¾çš„é¡ºåºå­˜å…¥äºŒç»´æ•°ç»„c
 			if(order[k]==0){
 				c[o][0]=a[i++];
 				c[o][1]=1;
@@ -154,7 +154,7 @@ public class primwork {
 		arr=calculate(c,n,m);
 		return arr;
 	 }
-	 public static int[] calculate(int[][] c,int n,int m){  //cÎª´æ´¢Äæ²¨À¼±í´ïÊ½µÄ¶şÎ¬Êı×é£¬¸ù¾İÄæ²¨À¼±í´ïÊ½¼ÆËã½á¹û
+	 public static int[] calculate(int[][] c,int n,int m){  //cä¸ºå­˜å‚¨é€†æ³¢å…°è¡¨è¾¾å¼çš„äºŒç»´æ•°ç»„ï¼Œæ ¹æ®é€†æ³¢å…°è¡¨è¾¾å¼è®¡ç®—ç»“æœ
 		 int i,w,x,y,z;
 		 int[] arr=new int[2];
 		 stack<Integer> stack = new arraystack<Integer>();
@@ -178,10 +178,10 @@ public class primwork {
 		 return arr;
 		 
 	 }
-	 public static int precedence (int op1,int op2){  //ÅĞ¶ÏÔËËã·ûÓÅÏÈ¼¶
-		 if(op1==0||op1==1) //0¡¢1 ·Ö±ğ´ú±í"+"¡¢"-"
+	 public static int precedence (int op1,int op2){  //åˆ¤æ–­è¿ç®—ç¬¦ä¼˜å…ˆçº§
+		 if(op1==0||op1==1) //0ã€1 åˆ†åˆ«ä»£è¡¨"+"ã€"-"
 		 {
-			 if(op2==2||op2==3)  //2¡¢3·Ö±ğ´ú±í"*"¡¢"¡Â"
+			 if(op2==2||op2==3)  //2ã€3åˆ†åˆ«ä»£è¡¨"*"ã€"Ã·"
 				 return -1;
 			 else
 				 return 0;
@@ -198,75 +198,71 @@ public class primwork {
 	 {
 		 Scanner input=new Scanner(System.in);
 		 int i,k,p,flag=0;
-		 int n=(int)(Math.random()*3)+2;   //ÕûÊı¸öÊıÖÁÉÙÎª2¸ö×î¶àÎª5¸ö
-		 int m=(int)(Math.random()*6);  //Õæ·ÖÊı¸öÊı×î¶àÎª5¸ö
+		 int n=(int)(Math.random()*3)+2;   //æ•´æ•°ä¸ªæ•°è‡³å°‘ä¸º2ä¸ªæœ€å¤šä¸º5ä¸ª
+		 int m=(int)(Math.random()*6);  //çœŸåˆ†æ•°ä¸ªæ•°æœ€å¤šä¸º5ä¸ª
 		 int[] arr=new int[2];
-		 int[] a=new int[5];  //×î¶à´æ·Å5¸öÕûÊı
-		 int[][] b=new int[5][2]; //×î¶à´æ·Å5¸öÕæ·ÖÊı
-		 int[] op=new int[10]; //×î¶à´æ·Å10¸öÔËËã·û
-		 p=Integer.parseInt(args[0]); //È¡²ÎÊıÖµ
+		 int[] a=new int[5];  //æœ€å¤šå­˜æ”¾5ä¸ªæ•´æ•°
+		 int[][] b=new int[5][2]; //æœ€å¤šå­˜æ”¾5ä¸ªçœŸåˆ†æ•°
+		 int[] op=new int[10]; //æœ€å¤šå­˜æ”¾10ä¸ªè¿ç®—ç¬¦
+		 p=Integer.parseInt(args[0]); //å–å‚æ•°å€¼
 		 for(k=0;k<p;k++){
-			 for(i=0;i<n;i++)  //Ëæ»úÉú³Én¸ö100ÒÔÄÚµÄÕûÊı
+			 for(i=0;i<n;i++)  //éšæœºç”Ÿæˆnä¸ª100ä»¥å†…çš„æ•´æ•°
 				 a[i]=(int)(Math.random()*100)+1;
-			 for(i=0;i<m;i++){  //Ëæ»úÉú³Ém¸ö×î¼òÕæ·ÖÊı
+			 for(i=0;i<m;i++){  //éšæœºç”Ÿæˆmä¸ªæœ€ç®€çœŸåˆ†æ•°
 				 int[] c=fraction();
 				 b[i][0]=c[0];
 				 b[i][1]=c[1];	 
 			 }
-			 for(i=0;i<m+n-1;i++)  //Ëæ»úÉú³Ém+n-1¸öÔËËã·û£¬ÆäÖĞ0´ú±í"+"£¬1´ú±í"-"£¬2´ú±í"*"£¬3´ú±í"¡Â"
+			 for(i=0;i<m+n-1;i++)  //éšæœºç”Ÿæˆm+n-1ä¸ªè¿ç®—ç¬¦ï¼Œå…¶ä¸­0ä»£è¡¨"+"ï¼Œ1ä»£è¡¨"-"ï¼Œ2ä»£è¡¨"*"ï¼Œ3ä»£è¡¨"Ã·"
 				 op[i]=(int)(Math.random()*4);
 			 arr=res(a,b,op, display(n,m,a,b,op),n,m);
 			 String s = input.next();
-			 //String s=0+"";
+			 //String s=0+""; //æµ‹è¯•æ—¶é»˜è®¤è¾“å…¥å€¼ä¸º0
 			 if(arr[0]>0){
 				 arr=gcd(arr[0],arr[1]);
 				 if(arr[1]==1){
 					 if(s.equals(String.valueOf(arr[0]))){
-						 System.out.println("ÕıÈ·");
+						 System.out.println("æ­£ç¡®");
 						 flag++;
 					}
 					 else
-						 System.out.println("´íÎó£¬ÕıÈ·´ğ°¸Îª"+arr[0]);
+						 System.out.println("é”™è¯¯ï¼Œæ­£ç¡®ç­”æ¡ˆä¸º"+arr[0]);
 				 }
 				 else{
 					 if(s.equals(String.valueOf(arr[0]+"/"+arr[1]))){
-						 System.out.println("ÕıÈ·");
+						 System.out.println("æ­£ç¡®");
 						 flag++;
 					 }
 					 else
-						 System.out.println("´íÎó£¬ÕıÈ·´ğ°¸Îª"+arr[0]+"/"+arr[1]);
+						 System.out.println("é”™è¯¯ï¼Œæ­£ç¡®ç­”æ¡ˆä¸º"+arr[0]+"/"+arr[1]);
 				 }	
 			 }
 			 else{
 				arr=gcd(Math.abs(arr[0]),arr[1]);
 				if(arr[1]==1){
 					if(s.equals(String.valueOf("-"+arr[0]))){
-						 System.out.println("ÕıÈ·");
+						 System.out.println("æ­£ç¡®");
 						 flag++;
 					}
 					 else
-						 System.out.println("´íÎó£¬ÕıÈ·´ğ°¸Îª-"+arr[0]);
+						 System.out.println("é”™è¯¯ï¼Œæ­£ç¡®ç­”æ¡ˆä¸º-"+arr[0]);
 				}
 				else{
 					if(s.equals(String.valueOf("-"+arr[0]+"/"+arr[1]))){
-						 System.out.println("ÕıÈ·");
+						 System.out.println("æ­£ç¡®");
 						 flag++;
 					}
 					 else
-						 System.out.println("´íÎó£¬ÕıÈ·´ğ°¸Îª-"+arr[0]+"/"+arr[1]);
+						 System.out.println("é”™è¯¯ï¼Œæ­£ç¡®ç­”æ¡ˆä¸º-"+arr[0]+"/"+arr[1]);
 				}	 
 			}
 		 }
-		 System.out.println("±¾´Î¹²"+p+"Ìâ,Äú´ğ¶ÔÁË"+flag+"Ìâ,ÕıÈ·ÂÊÎª"+flag*100/p+"%");
+		 System.out.println("æœ¬æ¬¡å…±"+p+"é¢˜,æ‚¨ç­”å¯¹äº†"+flag+"é¢˜,æ­£ç¡®ç‡ä¸º"+flag*100/p+"%");
 		 if(k==p)
 			 return 1;
 		 else
 			 return 0;
 		 
 	 }
-	 public static String getClassResource(Class<?> klass) {
-         return klass.getClassLoader().getResource(
-             klass.getName().replace('.', '/') + ".class").toString();
-    }
 	 
 }
