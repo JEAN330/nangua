@@ -45,11 +45,11 @@ public class primworkTest {
 		Assert.assertEquals(1, primwork.precedence(2, 1));
 	}
 
-	@Test
-	public void testMain() {
-		String str=1000+"";
-		String[] s=new String[]{str};
-		Assert.assertEquals(1, primwork.main(s));
-	}
+	//@Test
+	//public void testMain() {  //测试随机生成1000个算式的时间
+	//	String str=1000+"";
+	//	String[] s=new String[]{str};
+	//	Assert.assertEquals(1, primwork.main(s));
+	//}
 
 }
